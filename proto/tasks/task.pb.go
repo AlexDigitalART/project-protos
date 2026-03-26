@@ -21,13 +21,12 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// Сущность задача
 type Task struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	UserId        uint32                 `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"` // Добавили ID пользователя
+	UserId        uint32                 `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	Title         string                 `protobuf:"bytes,3,opt,name=title,proto3" json:"title,omitempty"`
-	IsDone        bool                   `protobuf:"varint,4,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"` // Добавили статус готовности
+	IsDone        bool                   `protobuf:"varint,4,opt,name=is_done,json=isDone,proto3" json:"is_done,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -90,7 +89,6 @@ func (x *Task) GetIsDone() bool {
 	return false
 }
 
-// Запрос на создание (передаем только то, что нужно для создания)
 type CreateTaskRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        uint32                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -187,7 +185,6 @@ func (x *CreateTaskResponse) GetTask() *Task {
 	return nil
 }
 
-// Получение одного
 type GetTaskRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -276,7 +273,6 @@ func (x *GetTaskResponse) GetTask() *Task {
 	return nil
 }
 
-// Список всех
 type ListTasksRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -357,7 +353,6 @@ func (x *ListTasksResponse) GetTasks() []*Task {
 	return nil
 }
 
-// Список задач конкретного юзера (как в задании)
 type ListTasksByUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        uint32                 `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -402,7 +397,6 @@ func (x *ListTasksByUserRequest) GetUserId() uint32 {
 	return 0
 }
 
-// Обновление
 type UpdateTaskRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -515,7 +509,6 @@ func (x *UpdateTaskResponse) GetTask() *Task {
 	return nil
 }
 
-// Удаление
 type DeleteTaskRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -652,7 +645,7 @@ const file_proto_tasks_task_proto_rawDesc = "" +
 	"\n" +
 	"UpdateTask\x12\x17.task.UpdateTaskRequest\x1a\x18.task.UpdateTaskResponse\x12?\n" +
 	"\n" +
-	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB<Z:github.com/AlexDigitalART/project-protos/proto/task;taskpbb\x06proto3"
+	"DeleteTask\x12\x17.task.DeleteTaskRequest\x1a\x18.task.DeleteTaskResponseB=Z;github.com/AlexDigitalART/project-protos/proto/tasks;taskpbb\x06proto3"
 
 var (
 	file_proto_tasks_task_proto_rawDescOnce sync.Once

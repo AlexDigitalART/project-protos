@@ -1,7 +1,7 @@
 syntax = "proto3";
 package user;
 
-option go_package = "github.com/AlexDigitalART/project-protos/proto/user;userpb";
+option go_package = "github.com/AlexDigitalART/project-protos/proto/users;userpb";
 
 message User {
   uint32 id = 1;

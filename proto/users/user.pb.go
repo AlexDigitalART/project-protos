@@ -161,7 +161,6 @@ func (x *CreateUserResponse) GetUser() *User {
 	return nil
 }
 
-// Важное изменение: теперь мы ждем специальный Request с полем id
 type GetUserRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -554,7 +553,7 @@ const file_proto_users_user_proto_rawDesc = "" +
 	"\n" +
 	"UpdateUser\x12\x17.user.UpdateUserRequest\x1a\x18.user.UpdateUserResponse\x12?\n" +
 	"\n" +
-	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponseB<Z:github.com/AlexDigitalART/project-protos/proto/user;userpbb\x06proto3"
+	"DeleteUser\x12\x17.user.DeleteUserRequest\x1a\x18.user.DeleteUserResponseB=Z;github.com/AlexDigitalART/project-protos/proto/users;userpbb\x06proto3"
 
 var (
 	file_proto_users_user_proto_rawDescOnce sync.Once
